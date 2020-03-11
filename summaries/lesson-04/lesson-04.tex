@@ -121,6 +121,17 @@ Given a set $\mathcal{D} = \{16,8,2,64\}$, if the true concept was even numbers,
 To formalize this, let us assume that examples are sampled uniformly at random from the extension of a concept (the extension of a concept is just the set of number that belong to it, \eg, the extension of $h_{even} = \{2,4,6,...,98,100\}$).
 Tenenbaum (\textbf{ref} p.66 MLAPP) describes this the \textbf{strong sampling assumption}.
 
+Given this assumption, the probability of independently sampling $N$ items (with replacement) from $h$ is given by:
+
+\begin{equation}
+  p(\mathcal{D}|h) = \left[\dfrac{1}{size(h)}\right]^N = \left[\dfrac{1}{|h|}\right]^N
+\end{equation}
+
+This crucial equation embodies what Tenenbaum calls the \textbf{size principle} (or, commonly \textbf{Occam's razor}), which means the model favors the simplest (smallest) hypothesis consistent with the data.
+
+
+
+
 
 
 \printbibliography
