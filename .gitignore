@@ -1,1 +1,7 @@
+# MO435 repository of summaries (forked gitlab)
 summaries/summaries-repo
+
+# Personal repository
+summaries/lesson-*/*
+!summaries/lesson-*/*.tex
+!summaries/lesson-*/*.pdf
