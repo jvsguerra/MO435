@@ -1,0 +1,15 @@
+[1] Config.pm:304> INFO - This is Biber 2.12
+[1] Config.pm:307> INFO - Logfile is 'lesson-03.blg'
+[29] biber:315> INFO - === seg mar  9, 2020, 18:29:26
+[46] Biber.pm:371> INFO - Reading 'lesson-03.bcf'
+[97] Biber.pm:889> INFO - Found 1 citekeys in bib section 0
+[112] Biber.pm:4093> INFO - Processing section 0
+[121] Biber.pm:4254> INFO - Looking for bibtex format file 'lesson-03.bib' for section 0
+[122] bibtex.pm:1512> INFO - LaTeX decoding ...
+[124] bibtex.pm:1329> INFO - Found BibTeX data source 'lesson-03.bib'
+[135] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[135] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[135] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[135] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[136] bbl.pm:636> INFO - Writing 'lesson-03.bbl' with encoding 'UTF-8'
+[136] bbl.pm:739> INFO - Output to lesson-03.bbl
