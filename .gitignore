@@ -1,6 +1,9 @@
 # MO435 repository of summaries (forked gitlab)
 summaries/remote-gitlab-fork
 
+# MO435 project-1 repository
+project-1/
+
 # Personal repository
 summaries/lesson-*/*
 !summaries/lesson-*/*.tex
