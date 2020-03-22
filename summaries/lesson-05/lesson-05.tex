@@ -1,0 +1,124 @@
+% !TeX spellcheck = en_US
+% !BIB program = biber 
+\documentclass{article}
+
+%% Encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%% Fonts
+% Math fonts (fourier) with utopia (erewhon) text fonts
+\usepackage{fourier, erewhon}
+
+%% Setup
+% This package contains logos
+% \usepackage[autoload]{adn}
+% \setlogos[
+% \textbf{MO435 --- Probabilistic Machine Learning}\\%[5pt]
+% \uppercase{Instituto de Computação --- UNICAMP}\\%[-7pt]
+% ]%
+% {IC3D}%
+% {UNICAMP}
+
+%% Transform section references
+\makeatletter
+\renewcommand*{\p@section}{\S\,}
+\renewcommand*{\p@subsection}{\S\,}
+\makeatother
+
+%% Shorthands
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+
+\def\eg{e.g\onedot} \def\Eg{E.g\onedot}
+\def\ie{i.e\onedot} \def\Ie{I.e\onedot}
+\def\cf{cf\onedot} \def\Cf{Cf\onedot}
+\def\etc{etc\onedot} \def\vs{vs\onedot}
+\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
+\def\etal{et al\onedot}
+\makeatother
+
+%%%
+% Other packages start here (see the examples below)
+%%
+
+%% Figues
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+
+%% References
+% Use this section to embed your bibliography
+% Instead of having a separate file, just place the bibtex entries here
+\usepackage{filecontents}% create files
+\begin{filecontents}{\jobname.bib}
+  @article{Burt1983,
+    title={A multiresolution spline with application to image mosaics},
+    author={Burt, Peter J and Adelson, Edward H},
+    journal={ACM Transactions on Graphics (TOG)},
+    volume={2},
+    number={4},
+    pages={217--236},
+    year={1983},
+    publisher={ACM},
+    url={http://persci.mit.edu/pub_pdfs/spline83.pdf}
+  }
+\end{filecontents}
+% Include bibliography file
+\usepackage[
+backend=biber, 
+style=ieee, 
+natbib=true,
+]{biblatex}
+\addbibresource{\jobname.bib}
+
+
+%% Math
+\usepackage{amsmath}
+
+
+%% Enumerate
+\usepackage{enumitem}
+
+
+\begin{document}
+% Put the topic of the assignment here, e.g., 'Linear Filtering' or 'Convolution and filters'
+\title{Logistic regression\\\normalsize Lesson No. 5}
+% Put your name here 
+\author{Jo\~ao Victor da Silva Guerra}
+
+\maketitle
+
+\section{Introduction}
+
+A \textbf{discriminative models}, also known as conditional models, are a class of models used in statistical classification, especially supervised machine learning. A discriminative classifier fits a model, with the form $p(y|x)$, based only on the observed data; however, these models rely strongly on data quality.
+
+Some examples of discriminative learning approaches are: logistic regression (LR), support vector machines (SVM) and conditional random fields (CRFs).
+
+\section{Model specification}
+
+A \textbf{logistic regression} can be generalized to a binary classification model as follows:
+
+\begin{equation}
+  p(y|x, w) = Ber(y|\mu(x))
+\end{equation}
+
+Further, $\mu(x)$ can be computed as a linear combination of the inputs ($w^Tx$), and we pass through a sigmoid (also known as logistic or logit) function that ensures $0 \leq \mu(x) \leq 1$. Then, 
+
+\begin{equation}
+  p(y|x, w) = Ber(y|\sigma(w^Tx))
+\end{equation}
+where $\sigma(\cdot)$ is the sigmoid function.
+
+\section{Model fitting}
+
+This section presents some algorithms for estimating the parameters of the logistic regression model.
+
+\subsection{Maximum Likelihood Estimate}
+
+
+\printbibliography
+
+\end{document}
