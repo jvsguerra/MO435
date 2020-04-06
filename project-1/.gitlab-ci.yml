@@ -1,0 +1,48 @@
+image: python:latest
+
+# Some variables to make your CI DRY
+variables:
+  FILE: src/requirements.txt
+
+before_script:
+  # Execute any scripts here before running your code
+
+stages:
+  - build
+  - exec
+  - report
+
+# This stage compiles the files
+build:
+  stage: build
+  script:
+    - make build
+  artifacts:
+    paths:
+      - ./bin
+      - ./output
+
+exec:
+  stage: exec
+  script: 
+    - make exec
+  artifacts:
+    paths:
+      # We need to publish our results so others can check them
+      - ./output
+  dependencies:
+    - build
+
+
+# This stage builds your report too
+report:
+  image: adnrv/texlive:latest
+  stage: report
+  script:
+    - cd report
+    - latexmk -pdf -pdflatex="pdflatex --shell-escape %O %S" report
+    # move the file to the root folder
+    - mv report.pdf ../
+  artifacts:
+    paths:
+      - report.pdf
