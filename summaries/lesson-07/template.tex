@@ -1,0 +1,119 @@
+% !TeX spellcheck = en_US
+% !BIB program = biber 
+\documentclass{article}
+
+%% Encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%% Fonts
+% Math fonts (fourier) with utopia (erewhon) text fonts
+\usepackage{fourier, erewhon}
+
+%% Setup
+% This package contains logos
+\usepackage[autoload]{adn}
+
+\setlogos[
+\textbf{MO435 --- Probabilistic Machine Learning}\\%[5pt]
+\uppercase{Instituto de Computação --- UNICAMP}\\%[-7pt]
+]%
+{IC3D}%
+{UNICAMP}
+
+%% Transform section references
+\makeatletter
+\renewcommand*{\p@section}{\S\,}
+\renewcommand*{\p@subsection}{\S\,}
+\makeatother
+
+%% Shorthands
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+
+\def\eg{e.g\onedot} \def\Eg{E.g\onedot}
+\def\ie{i.e\onedot} \def\Ie{I.e\onedot}
+\def\cf{cf\onedot} \def\Cf{Cf\onedot}
+\def\etc{etc\onedot} \def\vs{vs\onedot}
+\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
+\def\etal{et al\onedot}
+\makeatother
+
+%%%
+% Other packages start here (see the examples below)
+%%
+
+%% Figues
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+
+%% References
+% Use this section to embed your bibliography
+% Instead of having a separate file, just place the bibtex entries here
+\usepackage{filecontents}% create files
+\begin{filecontents}{\jobname.bib}
+  @article{Burt1983,
+    title={A multiresolution spline with application to image mosaics},
+    author={Burt, Peter J and Adelson, Edward H},
+    journal={ACM Transactions on Graphics (TOG)},
+    volume={2},
+    number={4},
+    pages={217--236},
+    year={1983},
+    publisher={ACM},
+    url={http://persci.mit.edu/pub_pdfs/spline83.pdf}
+  }
+\end{filecontents}
+% Include bibliography file
+\usepackage[
+backend=biber, 
+style=ieee, 
+natbib=true,
+]{biblatex}
+\addbibresource{\jobname.bib}
+
+
+%% Math
+\usepackage{amsmath}
+
+
+%% Enumerate
+\usepackage{enumitem}
+
+
+\begin{document}
+% Put the topic of the assignment here, e.g., 'Linear Filtering' or 'Convolution and filters'
+\title{Topic for the lesson\\\normalsize Lesson No. 1}
+% Put your name here 
+\author{J. Doe}
+
+\maketitle
+
+\section{Idea}
+
+The idea of the summaries is to write up what was discussed in class, what you read, and other information from relevant sources.  The summary must focus on relevant topics and discussions.  You must avoid discussions on logistics and bureaucracy regarding the class.  For example, discussing equations and ideas in detail is desired and encouraged; while discussing changes in dates for projects or changes in the evaluation that are not pertinent for the topics in class are frown upon.
+
+\section{Section}
+
+You are free to organize the content as you like  You are highly encouraged in using sections and subsections.  
+
+\subsection{What about references?}
+
+To use references you can use biblatex as defined above.  Just place your bibtex entries within the \texttt{filecontents} environment and then use it to cite~\cite{Burt1983}.
+
+\section{Packages}
+
+Simply add the needed packages above the \texttt{document} environment, where it is marked with the comments.  (You read the template, right?)
+
+\section{Figures and images}
+
+You can use images in your summary.  Just create a folder called \texttt{images-x} within your working directory, where \texttt{x} is your assigned number.  Note that you need to modify the \texttt{graphicspath} on the preamble of this file. 
+
+Prefer to use \texttt{SVG} files instead of raster images.
+
+\printbibliography
+
+\end{document}
