@@ -1,0 +1,9 @@
+# Files to ignore
+report/*
+!report/*.tex
+output
+*.pyc
+
+# Debug directories
+src/__pycache__/
+src/*.pyc

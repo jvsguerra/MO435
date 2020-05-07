@@ -1,10 +1,5 @@
-# MO435 repository of summaries (forked gitlab)
-summaries/remote-gitlab-fork
+# Ignore report auxiliary files
+project-*/report/*
+!project-*/report/report.tex
+!project-*/report/document.tex
 
-# MO435 project-2 repository
-project-2/
-
-# Personal repository
-summaries/lesson-*/*
-!summaries/lesson-*/*.tex
-!summaries/lesson-*/*.pdf
