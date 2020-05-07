@@ -1,5 +1,5 @@
 # Ignore report auxiliary files
 project-*/report/*
 !project-*/report/report.tex
-!project-*/report/document.tex
+!project-*/report/document.pdf
 
